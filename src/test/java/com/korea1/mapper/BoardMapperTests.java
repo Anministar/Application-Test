@@ -107,7 +107,7 @@ public class BoardMapperTests {
       // mapper 의 delete를 이용하여 DB에 특정 게시물을 삭제하고
       // 결과 스크린샷으로 찍기
 
-      int result = mapper.delete((long) 1);
+      int result = mapper.delete((long) 3);
       log.info("===============================================================================================================");
       log.info("DELETE RESULT : " + result);
       log.info("===============================================================================================================");
@@ -118,7 +118,7 @@ public class BoardMapperTests {
       // mapper 의 update를 이용하여 DB에 특정 게시물을 수정하고
       // 결과 스크린샷으로 찍기
 
-      BoardVO vo = new BoardVO(2, "TEST4", "네번째 테스트입니다!!", "Tester4", null, null);
+      BoardVO vo = new BoardVO(5, "TEST4", "네번째 테스트입니다!!", "Tester4", null, null);
       int update = mapper.update(vo);
       log.info("===============================================================================================================");
       log.info("UPDATE RESULT : " + update);
