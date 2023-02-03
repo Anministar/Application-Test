@@ -1,0 +1,6 @@
+com\korea1\domain\Criteria.class
+com\korea1\domain\BoardVO.class
+com\korea1\app\HomeController.class
+com\korea1\domain\BoardVO$BoardVOBuilder.class
+com\korea1\domain\Criteria$CriteriaBuilder.class
+com\korea1\mapper\BoardMapper.class

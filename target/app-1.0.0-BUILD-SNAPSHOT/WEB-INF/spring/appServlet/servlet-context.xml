@@ -27,8 +27,11 @@
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
 
-	<context:component-scan
-		base-package="com.korea1.app" />
+	<context:component-scan base-package="com.korea1.app" />
+	<context:component-scan base-package="com.korea1.controller" />
+	<context:component-scan base-package="com.korea1.exception" />
+	<context:component-scan base-package="com.korea1.mapper" />
+	<context:component-scan base-package="com.korea1.domain" />
 
 
 

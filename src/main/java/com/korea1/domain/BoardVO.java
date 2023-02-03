@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Component
 public class BoardVO {
 
-	private Integer bno;
+	private int bno;
 	private String title;
 	private String content;
 	private String writer;

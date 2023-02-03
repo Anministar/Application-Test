@@ -20,20 +20,13 @@ public interface BoardMapper {
 	
 	
 	@Insert
-	("insert into tbl_board values(null, #{title},#{content},#{writer}, NOW(), NOW())")
+	("insert into tbl_board(title,content,writer,regdate,updatedate) values(#{title},#{content},#{writer}, NOW(), NOW())")
 	public void insert(BoardVO board);
 	
 	
-	@SelectKey
-	(
-			statement="select max(bno) from tbl_board",
-			keyProperty="bno",
-			before=false,
-			resultType=long.class
-	)
-	@Insert
-	("insert into tbl_board values(null, #{title},#{content},#{writer}, NOW(), NOW())")
-	public long insertSelectKey(BoardVO board);
+	@SelectKey(before=false, keyProperty="bno", resultType=int.class, statement={"select max(bno) from tbl_board"})
+	@Insert("insert into tbl_board(title,content,writer,regdate,updatedate) values(#{title},#{content},#{writer}, NOW(), NOW())")
+	public int insertSelectKey(BoardVO board);
 	
 	
 	@Select("select * from tbl_board where bno=#{bno}")
@@ -50,5 +43,5 @@ public interface BoardMapper {
 
 	
 	@Select("select count(*) from tbl_board where bno>0")
-	public int getTotalCount(Criteria cri);
+	public int getTotalCount();
 }
